@@ -10,7 +10,7 @@ public class FileUtil {
      * @param args - Actually command line arguments
      * 
      * @return {@link File} instance of first argument
-     * @throws FileNotFoundException - if file name doesn't exist or isn't simple text file
+     * @throws FileNotFoundException - if file name doesn't exist or it isn't simple text file
      */
     public static File getFileFromArgs(String... args) throws FileNotFoundException {
         if (args.length == 0) {

@@ -53,7 +53,7 @@ public class ApiControllerTest {
     }
 
     @Test
-    public void testDirectNonEmptyParams() throws Exception {
+    public void testDirectWithParams() throws Exception {
         this.mockMvc
                 .perform(get(UrlConstants.API_DIRECT_URL).param(UrlConstants.DEPARTURE_SID, DEPARTURE_SID)
                         .param(UrlConstants.ARRIVAL_SID, ARRIVAL_SID))

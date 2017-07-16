@@ -15,6 +15,7 @@ public class BusRouteHolder {
      *         otherwise false
      */
     public static final boolean isDirectBusRoute(String depSid, String arrSid) {
+        // parallel stream is used to increase performance
         Optional<BusRoute> optional = BUS_ROUTES.values().parallelStream()
                 .filter(busRoute -> busRoute.hasStationSid(arrSid) && busRoute.hasStationSid(depSid)).findAny();
         return optional.isPresent();

@@ -9,14 +9,14 @@ import java.util.Set;
 public class BusRoute {
 
     private final String _routeId;
-    /** {@link Set} is designed as hash table data structure
-     * so complexity is around O(1) to find some value in this structure */
     private final Set<String> _stationsSids;
 
     public BusRoute(String routeId, List<String> stationsIds) {
         _routeId = routeId;
-        // there is no requirements about order of data
-        // if you want to save order of station ids then use {@link LinkedHashSet}
+        // {@link HashSet} is designed as hash table data structure,
+        // so complexity is around O(1) to find some value in this structure.
+        // There is no requirements about order of station sids
+        // if you want to save order of station sids then use {@link LinkedHashSet}
         _stationsSids = new HashSet<>(stationsIds);
     }
 
@@ -31,7 +31,7 @@ public class BusRoute {
     }
 
     /** @return true if bus route has given station sid */
-    public boolean hasStationSid(String stationsSid) {
-        return _stationsSids.contains(stationsSid);
+    public boolean hasStationSid(String stationSid) {
+        return _stationsSids.contains(stationSid);
     }
 }
